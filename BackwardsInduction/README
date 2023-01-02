@@ -1,0 +1,35 @@
+BUGS:
+0 is allowed as a valid input to the command loop 8/12/2022
+
+PURPOSE:
+    To conduct backwards induction on an extensive form game and find subgame perfect 
+    equilibria. The user can find a path to a terminal node (from any node) along only 
+    edges in a subgame perfect equilibrium. This should help me better understand nash 
+    equilibrium in the context of extensive form games and also let me create linked data 
+    structures without c++'s pointers.
+
+FILES:
+    IndTree.py: implements the class IndTree responsible for building a game and performing
+    backwards induction
+
+    main.py: provides the file containing the game and allows looped user input in the 
+    program
+
+    Node.py: defines the Node object used in the game tree
+
+    samplegame.txt: a properly formatted game tree file for your convenience
+
+    samplegameTree.txt: a visualization of the game tree from samplegame.txt for your 
+    convenience
+
+PROGRAM RESTRICTIONS AND USE:
+    *** The game used in this program must have at least 1 internal node.
+    *** Players must be numbered from 1 to n where n is the number of players.
+    *** To exit the game, input -1
+    *** The input to this program is a game represented as a text file with the following formatting:
+        ~~~ a node is formatted: player payoff1,payoff2,payoff3... 
+        ~~~ each node is on its own line
+        ~~~ a newly-read node has the previouly considered node as a parent 
+        ~~~ a line with only a "." or a "" indicates to consider the node a level above the currently considered node.
+        ~~~ note that this means the game tree is built in preorder
+        ~~~ the program will stop building the game at the end of the file
